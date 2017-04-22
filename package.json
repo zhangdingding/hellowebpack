@@ -1,0 +1,44 @@
+{
+  "name": "hellowebpack",
+  "version": "1.0.0",
+  "description": "webpack2 practice book",
+  "main": "webpack.config.js",
+  "scripts": {
+    "clean": "rimraf dist/html/* dist/js/* dist/css/*",
+    "copycss": "cp src/css/base.css dist/css",
+    "pack": "webpack",
+    "prepack": "npm run clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangdingding/hellowebpack.git"
+  },
+  "keywords": [
+    "webpack",
+    "react"
+  ],
+  "author": "zhangdingding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhangdingding/hellowebpack/issues"
+  },
+  "homepage": "https://github.com/zhangdingding/hellowebpack#readme",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.3.3",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3"
+  }
+}

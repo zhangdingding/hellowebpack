@@ -1,0 +1,14 @@
+html {
+  height: 100%;
+  line-height: 1.6;
+  font-family: "PingFang SC", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Arial", "Segoe UI", "sans-serif";
+}
+
+body {
+  color: #26292e;
+}
+
+h1 {
+  font-family: "Source Code Pro", "monospace";
+  color: green;
+}
