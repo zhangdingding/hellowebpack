@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     nintendo: path.resolve(__dirname, 'src/js/nintendo.jsx'),
     sony: path.resolve(__dirname, 'src/js/sony.jsx'),
-    microsoft: path.resolve(__dirname, 'src/js/microsoft.jsx'),
+    microsoft: path.resolve(__dirname, 'src/js/microsoft.js'),
     common: ['react', 'react-dom']
   },
   module: {
