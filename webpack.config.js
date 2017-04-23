@@ -5,9 +5,10 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    hello: path.resolve(__dirname, 'src/js/hello.jsx'),
-    world: path.resolve(__dirname, 'src/js/world.jsx'),
-    react: ['react', 'react-dom']
+    nintendo: path.resolve(__dirname, 'src/js/nintendo.jsx'),
+    sony: path.resolve(__dirname, 'src/js/sony.jsx'),
+    microsoft: path.resolve(__dirname, 'src/js/microsoft.jsx'),
+    common: ['react', 'react-dom']
   },
   module: {
     rules: [{
@@ -29,16 +30,15 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'react',
-      minChunks: Infinity
+      name: 'common'
     }),
     new ExtractTextWebpackPlugin({
       filename: 'css/[name].[chunkhash:7].css'
     }),
     new HtmlWebpackPlugin({
-      chunks: ['hello', 'react'],
-      filename: 'html/hello.html',
-      title: 'Hello',
+      chunks: ['nintendo', 'common'],
+      filename: 'html/nintendo.html',
+      title: 'Hello Nintendo',
       minify: {
         collapseWhitespace: false,
         removeComments: true
@@ -46,9 +46,19 @@ module.exports = {
       template: path.resolve(__dirname, 'src/html/base.html')
     }),
     new HtmlWebpackPlugin({
-      chunks: ['world', 'react'],
-      filename: 'html/world.html',
-      title: 'World',
+      chunks: ['sony', 'common'],
+      filename: 'html/sony.html',
+      title: 'Hello Sony',
+      minify: {
+        collapseWhitespace: false,
+        removeComments: true
+      },
+      template: path.resolve(__dirname, 'src/html/base.html')
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['microsoft'],
+      filename: 'html/microsoft.html',
+      title: 'Hello Microsoft',
       minify: {
         collapseWhitespace: false,
         removeComments: true
