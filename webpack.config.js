@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common'
+      names: ['common', 'manifest']
     }),
     new ExtractTextWebpackPlugin({
       filename: 'css/[name].[chunkhash:7].css'
