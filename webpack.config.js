@@ -36,7 +36,7 @@ module.exports = {
       filename: 'css/[name].[chunkhash:7].css'
     }),
     new HtmlWebpackPlugin({
-      chunks: ['nintendo', 'common'],
+      chunks: ['nintendo', 'common', 'manifest'],
       filename: 'html/nintendo.html',
       title: 'Hello Nintendo',
       minify: {
@@ -46,7 +46,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src/html/base.html')
     }),
     new HtmlWebpackPlugin({
-      chunks: ['sony', 'common'],
+      chunks: ['sony', 'common', 'manifest'],
       filename: 'html/sony.html',
       title: 'Hello Sony',
       minify: {
@@ -56,7 +56,20 @@ module.exports = {
       template: path.resolve(__dirname, 'src/html/base.html')
     }),
     new HtmlWebpackPlugin({
-      chunks: ['microsoft'],
+      // chunks: ['microsoft', 'manifest'],
+      // chunksSortMode: (chunk1, chunk2) => {
+      //   let orders = ['manifest', 'microsoft'];
+      //   let order1 = orders.indexOf(chunk1.names[0]);
+      //   let order2 = orders.indexOf(chunk2.names[0]);
+      //   if (order1 > order2) {
+      //     return 1;
+      //   } else if (order1 < order2) {
+      //     return -1;
+      //   } else {
+      //     return 0;
+      //   }
+      // },
+      chunks: ['microsoft', 'common', 'manifest'],
       filename: 'html/microsoft.html',
       title: 'Hello Microsoft',
       minify: {
