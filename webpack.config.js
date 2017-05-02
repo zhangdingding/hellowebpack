@@ -30,6 +30,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
+      // minChunks: Infinity,
       names: ['common', 'manifest']
     }),
     new ExtractTextWebpackPlugin({
